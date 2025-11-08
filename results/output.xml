@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.14.0 on win32)" generated="2025-11-08T13:09:00.415341" rpa="false" schemaversion="5">
+<suite id="s1" name="Cek Tarif" source="C:\robot_projects\lionparcel_test\tests\cek_tarif.robot">
+<kw name="Open App" owner="keywords" type="SETUP">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>http://127.0.0.1:4723</arg>
+<arg>platformName=Android</arg>
+<arg>deviceName=emulator-5554</arg>
+<arg>automationName=UiAutomator2</arg>
+<arg>appPackage=com.lionparcel.services.consumer</arg>
+<arg>noReset=${True}</arg>
+<doc>Opens a new application to the given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.19/guides/caps/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | No     | alias             |</doc>
+<status status="PASS" start="2025-11-08T13:09:02.539010" elapsed="9.879560"/>
+</kw>
+<kw name="Set Appium Timeout" owner="AppiumLibrary">
+<arg>30 seconds</arg>
+<doc>Sets the timeout in ``seconds`` used by various keywords.</doc>
+<status status="PASS" start="2025-11-08T13:09:12.419055" elapsed="0.000524"/>
+</kw>
+<doc>Buka aplikasi di device menggunakan package tanpa APK</doc>
+<status status="PASS" start="2025-11-08T13:09:02.537036" elapsed="9.882739"/>
+</kw>
+<test id="s1-t1" name="Cek Tarif Dengan Input Valid" line="19">
+<kw name="User Berada di Halaman Cek Tarif" owner="keywords">
+<kw name="Wait Until Page Contains Element" owner="AppiumLibrary">
+<msg time="2025-11-08T13:09:13.664527" level="INFO">xpath criteria: //android.widget.TextView[@text='Cek Tarif untuk Pengirimanmu']</msg>
+<arg>//android.widget.TextView[@text='Cek Tarif untuk Pengirimanmu']</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element specified by the ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-11-08T13:09:12.424919" elapsed="1.239844"/>
+</kw>
+<doc>Navigasi ke halaman Cek Tarif</doc>
+<status status="PASS" start="2025-11-08T13:09:12.424330" elapsed="1.240707"/>
+</kw>
+<kw name=" User Memasukkan Kota Asal" owner="keywords">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-11-08T13:09:13.670282" level="INFO">Clicking element '//android.widget.EditText[@text='Sukawangi, Bekasi (CIK)']'.</msg>
+<msg time="2025-11-08T13:09:14.113620" level="INFO">xpath criteria: //android.widget.EditText[@text='Sukawangi, Bekasi (CIK)']</msg>
+<arg>//android.widget.EditText[@text='Sukawangi, Bekasi (CIK)']</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-08T13:09:13.666571" elapsed="0.447247"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="AppiumLibrary">
+<msg time="2025-11-08T13:09:15.628347" level="INFO">xpath criteria: //android.widget.EditText[@text='Cari Kecamatan']
+xpath criteria: //android.widget.EditText[@text='Cari Kecamatan']</msg>
+<arg>//android.widget.EditText[@text='Cari Kecamatan']</arg>
+<arg>timeout=2s</arg>
+<doc>Waits until the element specified by the ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-11-08T13:09:14.114166" elapsed="1.514349"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-11-08T13:09:15.632611" level="INFO">Clicking element '//android.widget.EditText[@text='Cari Kecamatan']'.</msg>
+<msg time="2025-11-08T13:09:15.861356" level="INFO">xpath criteria: //android.widget.EditText[@text='Cari Kecamatan']</msg>
+<arg>//android.widget.EditText[@text='Cari Kecamatan']</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-08T13:09:15.628793" elapsed="0.232726"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-11-08T13:09:15.865630" level="INFO">Typing text 'Babelan, Bekasi' into text field '//android.widget.EditText[@text='Cari Kecamatan']'</msg>
+<msg time="2025-11-08T13:09:18.128173" level="INFO">xpath criteria: //android.widget.EditText[@text='Cari Kecamatan']</msg>
+<arg>//android.widget.EditText[@text='Cari Kecamatan']</arg>
+<arg>${asal}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-08T13:09:15.861862" elapsed="2.266501"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-11-08T13:09:18.132611" level="INFO">Clicking element '//android.widget.TextView[@text='Babelan, Bekasi (BKA)']'.</msg>
+<msg time="2025-11-08T13:09:19.551848" level="INFO">xpath criteria: //android.widget.TextView[@text='Babelan, Bekasi (BKA)']</msg>
+<arg>//android.widget.TextView[@text='Babelan, Bekasi (BKA)']</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-08T13:09:18.128795" elapsed="1.423265"/>
+</kw>
+<arg>${asal_valid}</arg>
+<status status="PASS" start="2025-11-08T13:09:13.665798" elapsed="5.886459"/>
+</kw>
+<kw name=" User Memasukkan Kota Tujuan" owner="keywords">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-11-08T13:09:19.566434" level="INFO">Clicking element '//android.widget.EditText[@text='Tujuan (Nasional &amp; Internasional)']'.</msg>
+<msg time="2025-11-08T13:09:20.831065" level="INFO">xpath criteria: //android.widget.EditText[@text='Tujuan (Nasional &amp; Internasional)']</msg>
+<arg>//android.widget.EditText[@text='Tujuan (Nasional &amp; Internasional)']</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-08T13:09:19.562833" elapsed="1.268457"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="AppiumLibrary">
+<msg time="2025-11-08T13:09:22.185214" level="INFO">xpath criteria: //android.widget.EditText[@text='Cari Kecamatan']</msg>
+<arg>//android.widget.EditText[@text='Cari Kecamatan']</arg>
+<arg>timeout=2s</arg>
+<doc>Waits until the element specified by the ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-11-08T13:09:20.831717" elapsed="1.353663"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-11-08T13:09:22.189548" level="INFO">Typing text 'Jakarta Barat' into text field '//android.widget.EditText[@text='Cari Kecamatan']'</msg>
+<msg time="2025-11-08T13:09:23.032794" level="INFO">xpath criteria: //android.widget.EditText[@text='Cari Kecamatan']</msg>
+<arg>//android.widget.EditText[@text='Cari Kecamatan']</arg>
+<arg>${tujuan}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-08T13:09:22.185662" elapsed="0.847317"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-11-08T13:09:23.036969" level="INFO">Clicking element '//android.widget.TextView[@text='Kembangan']'.</msg>
+<msg time="2025-11-08T13:09:24.245552" level="INFO">xpath criteria: //android.widget.TextView[@text='Kembangan']</msg>
+<arg>//android.widget.TextView[@text='Kembangan']</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-08T13:09:23.033318" elapsed="1.212411"/>
+</kw>
+<arg>${tujuan_valid}</arg>
+<status status="PASS" start="2025-11-08T13:09:19.562061" elapsed="4.683833"/>
+</kw>
+<kw name=" User Menekan Tombol Cek Tarif" owner="keywords">
+<kw name="Wait Until Page Contains Element" owner="AppiumLibrary">
+<msg time="2025-11-08T13:09:25.398973" level="INFO">xpath criteria: //android.widget.Button[@text='Cek Tarif']
+xpath criteria: //android.widget.Button[@text='Cek Tarif']</msg>
+<arg>//android.widget.Button[@text='Cek Tarif']</arg>
+<arg>timeout=2s</arg>
+<doc>Waits until the element specified by the ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-11-08T13:09:24.247212" elapsed="1.151932"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-11-08T13:09:25.403463" level="INFO">Clicking element '//android.widget.Button[@text='Cek Tarif']'.</msg>
+<msg time="2025-11-08T13:09:26.287981" level="INFO">xpath criteria: //android.widget.Button[@text='Cek Tarif']</msg>
+<arg>//android.widget.Button[@text='Cek Tarif']</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-08T13:09:25.399577" elapsed="0.888568"/>
+</kw>
+<status status="PASS" start="2025-11-08T13:09:24.246651" elapsed="2.041719"/>
+</kw>
+<kw name=" User Memasukkan Berat Paket" owner="keywords">
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-11-08T13:09:26.298450" level="INFO">Typing text '3.2' into text field '//*[@class = 'android.widget.EditText' and @resource-id = 'com.lionparcel.services.consumer:id/edtTotalWeight']'</msg>
+<msg time="2025-11-08T13:09:28.038682" level="INFO">xpath criteria: //*[@class = 'android.widget.EditText' and @resource-id = 'com.lionparcel.services.consumer:id/edtTotalWeight']</msg>
+<arg>//*[@class = 'android.widget.EditText' and @resource-id = 'com.lionparcel.services.consumer:id/edtTotalWeight']</arg>
+<arg>${berat}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-08T13:09:26.294693" elapsed="1.744161"/>
+</kw>
+<arg>${berat_valid}</arg>
+<status status="PASS" start="2025-11-08T13:09:26.293903" elapsed="1.745123"/>
+</kw>
+<kw name="User Memasukkan Dimensi Panjang" owner="keywords">
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-11-08T13:09:28.043436" level="INFO">Typing text '40' into text field '//*[@class = 'android.widget.EditText' and @resource-id = 'com.lionparcel.services.consumer:id/edtDimensionLong']'</msg>
+<msg time="2025-11-08T13:09:29.616951" level="INFO">xpath criteria: //*[@class = 'android.widget.EditText' and @resource-id = 'com.lionparcel.services.consumer:id/edtDimensionLong']</msg>
+<arg>//*[@class = 'android.widget.EditText' and @resource-id = 'com.lionparcel.services.consumer:id/edtDimensionLong']</arg>
+<arg>${panjang}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-08T13:09:28.040654" elapsed="1.576443"/>
+</kw>
+<arg>${panjang_valid}</arg>
+<status status="PASS" start="2025-11-08T13:09:28.039988" elapsed="1.577286"/>
+</kw>
+<kw name="User Memasukkan Dimensi Lebar" owner="keywords">
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-11-08T13:09:29.625309" level="INFO">Typing text '30' into text field '//*[@class = 'android.widget.EditText' and @resource-id = 'com.lionparcel.services.consumer:id/edtDimensionWide']'</msg>
+<msg time="2025-11-08T13:09:31.032178" level="INFO">xpath criteria: //*[@class = 'android.widget.EditText' and @resource-id = 'com.lionparcel.services.consumer:id/edtDimensionWide']</msg>
+<arg>//*[@class = 'android.widget.EditText' and @resource-id = 'com.lionparcel.services.consumer:id/edtDimensionWide']</arg>
+<arg>${lebar}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-08T13:09:29.620971" elapsed="1.411397"/>
+</kw>
+<arg>${lebar_valid}</arg>
+<status status="PASS" start="2025-11-08T13:09:29.620213" elapsed="1.412322"/>
+</kw>
+<kw name="User Memasukkan Dimensi Tinggi" owner="keywords">
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-11-08T13:09:31.042557" level="INFO">Typing text '5' into text field '//*[@class = 'android.widget.EditText' and @resource-id = 'com.lionparcel.services.consumer:id/edtDimensionHeight']'</msg>
+<msg time="2025-11-08T13:09:32.383080" level="INFO">xpath criteria: //*[@class = 'android.widget.EditText' and @resource-id = 'com.lionparcel.services.consumer:id/edtDimensionHeight']</msg>
+<arg>//*[@class = 'android.widget.EditText' and @resource-id = 'com.lionparcel.services.consumer:id/edtDimensionHeight']</arg>
+<arg>${tinggi}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-08T13:09:31.038159" elapsed="1.345100"/>
+</kw>
+<arg>${tinggi_valid}</arg>
+<status status="PASS" start="2025-11-08T13:09:31.036893" elapsed="1.346588"/>
+</kw>
+<kw name="User Memasukkan Jenis Barang" owner="keywords">
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-11-08T13:09:32.393335" level="INFO">Typing text '(DG) Laptop' into text field '//*[@class = 'android.widget.EditText' and (@text = 'Masukkan jenis barangmu')]'</msg>
+<msg time="2025-11-08T13:09:33.788264" level="INFO">xpath criteria: //*[@class = 'android.widget.EditText' and (@text = 'Masukkan jenis barangmu')]</msg>
+<arg>//*[@class = 'android.widget.EditText' and (@text = 'Masukkan jenis barangmu')]</arg>
+<arg>${barang}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-08T13:09:32.389070" elapsed="1.399387"/>
+</kw>
+<arg>${jenis_barang}</arg>
+<status status="PASS" start="2025-11-08T13:09:32.388271" elapsed="1.400394"/>
+</kw>
+<kw name="User Masukkan Asuransi Nilai Barang" owner="keywords">
+<kw name="Wait Until Page Contains Element" owner="AppiumLibrary">
+<msg time="2025-11-08T13:09:37.187667" level="INFO">xpath criteria: //*[@class = 'android.widget.EditText' and @resource-id = 'com.lionparcel.services.consumer:id/edtInsurancePrice']
+xpath criteria: //*[@class = 'android.widget.EditText' and @resource-id = 'com.lionparcel.services.consumer:id/edtInsurancePrice']
+xpath criteria: //*[@class = 'android.widget.EditText' and @resource-id = 'com.lionparcel.services.consumer:id/edtInsurancePrice']
+xpath criteria: //*[@class = 'android.widget.EditText' and @resource-id = 'com.lionparcel.services.consumer:id/edtInsurancePrice']
+xpath criteria: //*[@class = 'android.widget.EditText' and @resource-id = 'com.lionparcel.services.consumer:id/edtInsurancePrice']</msg>
+<arg>//*[@class = 'android.widget.EditText' and @resource-id = 'com.lionparcel.services.consumer:id/edtInsurancePrice']</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element specified by the ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-11-08T13:09:33.798885" elapsed="3.388941"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-11-08T13:09:37.192239" level="INFO">Typing text '20000000' into text field '//*[@class = 'android.widget.EditText' and @resource-id = 'com.lionparcel.services.consumer:id/edtInsurancePrice']'</msg>
+<msg time="2025-11-08T13:09:38.038560" level="INFO">xpath criteria: //*[@class = 'android.widget.EditText' and @resource-id = 'com.lionparcel.services.consumer:id/edtInsurancePrice']</msg>
+<arg>//*[@class = 'android.widget.EditText' and @resource-id = 'com.lionparcel.services.consumer:id/edtInsurancePrice']</arg>
+<arg>${harga_barang}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-08T13:09:37.188249" elapsed="0.850483"/>
+</kw>
+<arg>${harga_barang}</arg>
+<status status="PASS" start="2025-11-08T13:09:33.798076" elapsed="4.240824"/>
+</kw>
+<kw name="Sistem Menampilkan Tarif Pengiriman" owner="keywords">
+<kw name="Wait Until Page Contains Element" owner="AppiumLibrary">
+<msg time="2025-11-08T13:09:42.176560" level="INFO">xpath criteria: //*[@class = 'android.widget.TextView' and @resource-id = 'com.lionparcel.services.consumer:id/txtTotalTariffEstimation']
+xpath criteria: //*[@class = 'android.widget.TextView' and @resource-id = 'com.lionparcel.services.consumer:id/txtTotalTariffEstimation']
+xpath criteria: //*[@class = 'android.widget.TextView' and @resource-id = 'com.lionparcel.services.consumer:id/txtTotalTariffEstimation']
+xpath criteria: //*[@class = 'android.widget.TextView' and @resource-id = 'com.lionparcel.services.consumer:id/txtTotalTariffEstimation']
+xpath criteria: //*[@class = 'android.widget.TextView' and @resource-id = 'com.lionparcel.services.consumer:id/txtTotalTariffEstimation']</msg>
+<arg>//*[@class = 'android.widget.TextView' and @resource-id = 'com.lionparcel.services.consumer:id/txtTotalTariffEstimation']</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element specified by the ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-11-08T13:09:38.040348" elapsed="4.136397"/>
+</kw>
+<kw name="Get Text" owner="AppiumLibrary">
+<msg time="2025-11-08T13:09:42.548216" level="INFO">Element '//*[@class = 'android.widget.TextView' and @resource-id = 'com.lionparcel.services.consumer:id/txtTotalTariffEstimation']' text is 'Rp8.250' </msg>
+<msg time="2025-11-08T13:09:42.548424" level="INFO">xpath criteria: //*[@class = 'android.widget.TextView' and @resource-id = 'com.lionparcel.services.consumer:id/txtTotalTariffEstimation']</msg>
+<msg time="2025-11-08T13:09:42.548665" level="INFO">${actual_result} = Rp8.250</msg>
+<var>${actual_result}</var>
+<arg>//*[@class = 'android.widget.TextView' and @resource-id = 'com.lionparcel.services.consumer:id/txtTotalTariffEstimation']</arg>
+<doc>Returns the text of the element with the ``locator``.</doc>
+<status status="PASS" start="2025-11-08T13:09:42.177139" elapsed="0.371599"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${expected_result}</arg>
+<arg>${actual_result}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-11-08T13:09:42.549058" elapsed="0.000520"/>
+</kw>
+<arg>${ex_result}</arg>
+<status status="PASS" start="2025-11-08T13:09:38.039600" elapsed="4.510156"/>
+</kw>
+<doc>Positive test case: input valid</doc>
+<status status="PASS" start="2025-11-08T13:09:12.419950" elapsed="30.138847"/>
+</test>
+<kw name="Close App" owner="keywords" type="TEARDOWN">
+<kw name="Close Application" owner="AppiumLibrary">
+<doc>Closes the current application and the webdriver session.</doc>
+<status status="PASS" start="2025-11-08T13:09:42.562042" elapsed="1.153163"/>
+</kw>
+<doc>Tutup aplikasi</doc>
+<status status="PASS" start="2025-11-08T13:09:42.561492" elapsed="1.153929"/>
+</kw>
+<doc>Test case untuk fitur Cek Tarif di aplikasi Lion Parcel</doc>
+<status status="PASS" start="2025-11-08T13:09:00.418742" elapsed="43.296788"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Cek Tarif" id="s1" pass="1" fail="0" skip="0">Cek Tarif</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
